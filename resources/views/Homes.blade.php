@@ -15,20 +15,19 @@
         <h1 class="my-4">We Bare Bears Character</h1>
   
         <!-- Blog Post -->
-       @foreach($articles as $article)
+        @foreach ($article as $artic)
         <div class="card mb-4">
-            <img class="card-img-top" src="{{$article -> featured_image}}" width="640" height="360" alt="Card image cap">
+            <img class="card-img-top" src="{{$artic -> featured_image}}" width="640" height="360" alt="Card image cap">
             <div class="card-body">
-                <h2 class="card-title">{{ $article->title }}</h2>
-            <p class="card-text">{{ Str::limit($article->content, 100, '...') }}</p>
-                <a href="{{ './article/'.$article->id }}" class="btn btn-primary">Read More &rarr;</a>
+                <h2 class="card-title">{{ $artic->title }}</h2>
+            <p class="card-text">{{ Str::limit($artic->content, 100, '...') }}</p>
+                <a href="{{ './article/'.$artic->id }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
                 Posted on September 04, 2020 by Vil
             </div>
         </div>
-       @endforeach
-      
+        @endforeach
   
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">

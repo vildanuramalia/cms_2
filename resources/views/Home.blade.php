@@ -12,8 +12,8 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                        
                     @endif
+                    <a class="nav-link active" href="Homes">Home</a>
                     {{ __('You are logged in!') }}
                 </div>
             </div>

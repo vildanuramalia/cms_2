@@ -15,6 +15,6 @@ class HomesController extends Controller
 
     });
         $article = Cache::get('article');
-        return view('Home')->with(compact('article'));
+        return view('Homes')->with(compact('article'));
     }
 }
