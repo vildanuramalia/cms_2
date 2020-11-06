@@ -30,13 +30,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-          <a class="nav-link" href="{{ url('./Homes') }}">Home
-              <span class="sr-only">(current)</span>
-            </a>
+        </li>
+          <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
+          @can('user-display')
+          <a class="nav-link" href="{{ route('home') }}">Home</a>
+          @endcan
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('./About') }}">About</a>
+          <li class="nav-item {{ Route::is('about') ? 'active' : '' }}">
+          @can('user-display')
+          <a class="nav-link" href="{{ route('about') }}">About</a>
+          @endcan
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://webarebears.fandom.com/wiki/We_Bare_Bears_Wiki">Services</a>
@@ -44,9 +47,10 @@
           <li class="nav-item">
             <a class="nav-link" href="https://www.fandom.com/mediakit#contact">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/manage">Manage</a>
-          </li>
+          <li class="nav-item {{ Route::is('manage') ? 'active' : '' }}">
+          @can('manage-articles')
+          <a class="nav-link" href="{{ route('manage') }}">Manage</a>
+          @endcan
           <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }} <span class="caret"></span>

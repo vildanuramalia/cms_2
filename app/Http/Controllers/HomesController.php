@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Cache;
 
 class HomesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function __invoke(){
         Cache::remember('article', 10, function(){
             return Article::all();
