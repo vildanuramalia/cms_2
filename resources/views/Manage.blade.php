@@ -25,8 +25,10 @@
         <td>{{$a->created_at}}</td>
         <td><a href="Kelola/edit/{{ $a->id }}" class="badge badge-warning">Edit</a>
             <a href="Kelola/delete/{{ $a->id }}" class="badge badge-danger">Hapus</a>
-        </td>
+            <a href="/article/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
 
+        </td>
+        
         </tr>
         @endforeach
         </tbody>

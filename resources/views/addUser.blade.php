@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.Master')
 
-@section('title', 'Kelola')
+@section('title', 'Manage')
 
 @section('content')
 <div class="container" style="padding-top: 90px" >

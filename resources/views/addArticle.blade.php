@@ -21,11 +21,13 @@
         </div>
         <div class="form-group">
         <label for="image">Feature Image</label>
-        <input type="text" class="form-control"
+        <input type="file" class="form-control"
         required="required" name="image"></br>
         </div>
         <button type="submit" name="add" class="btn btn-primary">Tambah Data</button>
-        
+
+        <form action="/article/create" method="post" enctype="multipart/form-data">
+
     </form>
   </div>
   @endsection
