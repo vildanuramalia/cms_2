@@ -23,8 +23,8 @@
         <td>{{$a->id}}</td>
         <td>{{$a->title}}</td>
         <td>{{$a->created_at}}</td>
-        <td><a href="Kelola/edit/{{ $a->id }}" class="badge badge-warning">Edit</a>
-            <a href="Kelola/delete/{{ $a->id }}" class="badge badge-danger">Hapus</a>
+        <td><a href="manage/edit/{{ $a->id }}" class="badge badge-warning">Edit</a>
+            <a href="manage/delete/{{ $a->id }}" class="badge badge-danger">Hapus</a>
             <a href="/article/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
 
         </td>
@@ -33,6 +33,6 @@
         @endforeach
         </tbody>
     </table>
-    <a href="Kelola/add" class="btn btn-dark float-right">Tambah Data</a>
+    <a href="manage/add" class="btn btn-dark float-right">Tambah Data</a>
 </div>
 @endsection 

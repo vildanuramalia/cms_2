@@ -19,8 +19,8 @@ class ArticleController extends Controller
     public function __construct(){
         //$this->middleware('auth');
         $this->middleware(function($request, $next){
-        if(Gate::allows('Manage')) return $next($request);
-        abort(403, 'Anda tidak memiliki cukup hak akses');
+            if(Gate::allows('Manage')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
         });
     }
     public function index(){
@@ -62,12 +62,15 @@ class ArticleController extends Controller
         $article->content = $request->content;
         if($article->featured_image && file_exists(storage_path('app/public/' . $article->featured_image)))
         {
-            \Storage::delete('public/'.$article->featured_image);
+            Storage::delete('public/'.$article->featured_image);
         }
-        $image_name = $request->file('image')->store('images', 'public');
+        if ($request->file('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
         $article->featured_image = $image_name;
         $article->save();
-        return redirect('/Manage');
+        echo "<pre>"; print_r($article); die;
+        return redirect('/manage');
     }
     //public function update($id, Request $request){
       //  $article = Article::find($id);
